@@ -11,7 +11,7 @@ let getLinks = async (req, res) => {
         console.log(links)
         res.status(200).json({
             ok: true,
-            links
+            data: links
         })
     } else if (links.length === 0) {
         res.send('No hay ningún link registrado')
@@ -31,7 +31,7 @@ let postLinks = async (req, res) => {
         .then(() => {
             res.status(200).json({
                 ok: true,
-                newLinks,
+                data: newLinks,
                 sms: 'Link creado'
             })
         }).catch(e => {
@@ -50,7 +50,7 @@ let putLinks = async (req, res) => {
     if (putLinks) {
         res.status(200).json({
             ok: true,
-            links,
+            data: links,
             sms: 'Link actualizado'
         })
     } else {

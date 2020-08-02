@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       }
     };
     this.loginServices.login(datalogin).subscribe((data: Data) => {
-     //si la transaccion es falta salta al error
+     //si la transaccion es falsa salta al error
       if (data.ok) {
         //si no obtiene el token despues de logearse salta a Error
         if (this.permisos.decodificarToken(data.token)) {

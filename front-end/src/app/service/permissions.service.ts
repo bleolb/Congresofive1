@@ -9,7 +9,7 @@ import * as jwt_decode from 'jwt-decode';
   providedIn: 'root'
 })
 export class PermissionsService {
-  datarx:Data;
+  data:Data;
   private token: string;
   private usuarioLogin:Person;
   private rol: string;

@@ -11,7 +11,7 @@ let getprofile = async (req, res) => {
         console.log(profile)
         res.status(200).json({
             ok: true,
-            profile
+            data: profile
         })
     } else if (profile.length === 0) {
         res.send('No hay ningún perfil')
@@ -31,7 +31,7 @@ let postprofile = async (req, res) => {
         .then(() => {
             res.status(200).json({
                 ok: true,
-                newprofile,
+                data: newprofile,
                 sms: 'Perfil creado'
             })
         }).catch(e => {
