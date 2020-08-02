@@ -116,6 +116,7 @@ let login = async (req, res) => {
             })
             res.status(200).json({
                 ok: true,
+                person,
                 sms: 'Usuario y Contrtaseña válidos',
                 token
             })

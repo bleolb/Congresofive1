@@ -8,6 +8,15 @@ const Person = new Schema({
         type: String,
         enum: ['Administrador', 'Organizador', 'Revisor', 'Ponente', 'Asistente']
     },
+    level_academy: {
+        type: String,
+        enum: ['Master', 'TercerNivel', 'SegundoNivel']
+        
+    },
+    specialty: {
+        type: String,
+        enum: ['Medicina', 'Economía', 'Deportes', 'Educacion']
+    },
     type_dni: {
         type: String,
         enum: ['Cedula', 'Pasaporte']

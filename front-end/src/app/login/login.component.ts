@@ -12,8 +12,6 @@ import { Data } from '../models/data';
 })
 export class LoginComponent implements OnInit {
   loginData: FormGroup;
-  //viewPassword = true;
-
   constructor(
     private loginServices: LoginService,
     private permisos: PermissionsService,
