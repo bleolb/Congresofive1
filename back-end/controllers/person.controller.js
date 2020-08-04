@@ -84,7 +84,6 @@ let putPerson = async (req, res) => {
 let disablePerson = async (req, res) => {
     let id = req.params.id
     let person = req.body
-    console.log(person)
     let disablePerson = await Person.updateOne({_id: id}, {$set: {status: person.status}})
     if (disablePerson) {
         res.status(200).json({

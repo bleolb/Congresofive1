@@ -12,7 +12,6 @@ export class AdministratorsService implements CanActivate {
   rol:any;
   canActivate() {
     this.rol=  this.auth.getUserRol()
-    console.log(this.rol)
     if (this.rol!='Administrador'){
       alert('Usted no puede ingresar')
       this.router.navigate(['/home'])
