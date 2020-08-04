@@ -9,7 +9,7 @@ let getCongress = async (req, res) => {
     if (congress) {
         res.status(200).json({
             ok: true,
-            congress
+            data: congress
         })
     } else if (congress.length === 0) {
         res.send('No hay ningún congreso registrado')
@@ -28,7 +28,7 @@ let postCongress = async (req, res) => {
         .then(() => {
             res.status(200).json({
                 ok: true,
-                newCongress,
+                data: newCongress,
                 sms: 'Congreso creado'
             })
         }).catch(e => {
@@ -47,7 +47,7 @@ let putCongress = async (req, res) => {
     if (putCongress) {
         res.status(200).json({
             ok: true,
-            congress,
+            data: congress,
             sms: 'Congreso actualizado'
         })
     } else {

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ) {
 
   }
-//formulario con data Definida y requerida 
+
   ngOnInit() {
     this.loginData = this.formBuilder.group({
       email: ["ble@gmail.com", Validators.required],
@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    //obtenemos los datos desde el html
     let email = this.loginData.get('email').value;
     let password = this.loginData.get('password').value;
     let datalogin = {
@@ -39,10 +38,8 @@ export class LoginComponent implements OnInit {
       }
     };
     this.loginServices.login(datalogin).subscribe((data: Data) => {
-     //si la transaccion es falsa salta al error
       if (data.ok) {
-        //si no obtiene el token despues de logearse salta a Error
-        if (this.permisos.decodificarToken(data.token)) {
+          if (this.permisos.decodificarToken(data.token)) {
           this.router.navigate(['/home']);
         } else {
           email = '';

@@ -4,14 +4,14 @@ import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {RegisterComponent} from './register/register.component';
 import {PageNotFoundComponent} from './home/page-not-found/page-not-found.component';
-import { AdministratorsService } from './guard/ValidationRol/administrators.service';
+//import { AdministratorsService } from './guard/ValidationRol/administrators.service';
 
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'register', component: RegisterComponent, canActivate: [AdministratorsService]},
+  {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
