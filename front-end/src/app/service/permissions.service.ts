@@ -23,7 +23,6 @@ export class PermissionsService {
       this.token = token || null;
       this.usuarioLogin = decoded || null;
       this.rol= this.usuarioLogin.rol;
-      console.log(this.rol)
       return true;
     } else {
       return false;
@@ -44,8 +43,8 @@ export class PermissionsService {
     return this.usuarioLogin;
   }
   
-  getUserRol(): boolean {
-    return this.rol != "Administrador";
+  getUserRol(): string {
+    return this.rol;
   }
-  
+
 }

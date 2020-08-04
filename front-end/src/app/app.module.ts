@@ -10,7 +10,12 @@ import { HeaderComponent } from './home/header/header.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { RegisterComponent } from './register/register.component';
 import { PageNotFoundComponent } from './home/page-not-found/page-not-found.component';
-import { RolService } from '../app/guard/rol.service';
+import { AdministratorsService } from './guard/ValidationRol/administrators.service';
+import { ReviewerService } from './guard/ValidationRol/reviewer.service';
+import { OrganizerService } from './guard/ValidationRol/organizer.service';
+import { SpeakerService } from './guard/ValidationRol/speaker.service';
+import { AssistantService } from './guard/ValidationRol/assistant.service'
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,7 @@ import { RolService } from '../app/guard/rol.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [RolService],
+  providers: [AdministratorsService, ReviewerService, OrganizerService, SpeakerService, AssistantService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
